@@ -1,0 +1,188 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-image: linear-gradient(120deg, #fccb909d 0%, #d57eeb 100%);
+    cursor: default;
+    height:100vh;
+    width:100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    text-shadow: 0px 0px 10px white;
+}
+button{
+    cursor: pointer;
+    margin:0 0.5rem;
+    padding:0.2rem 0.5rem;
+    letter-spacing: 1px;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+}
+button:hover{
+    background:black;
+    color:yellow;
+}
+.game-conatiner{
+    width:40rem;
+    height: 35rem;
+    background: linear-gradient(-45deg , transparent ,rgba(0, 195, 255, 0.199));
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.25),
+    -10px -10px 15px rgba(0,0,0,0.1) inset,
+    10px 10px 15px rgba(255,255,255,0.5) inset;
+}
+.game-conatiner h2{
+    font-size: 2rem;
+    text-align: center;
+    margin-top:1rem;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+.game-conatiner h3{
+    font-size: 1.5rem;
+    text-align: center;
+    margin:0.5rem 0;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+.game-conatiner h4{
+    font-size: 1rem;
+    text-align: center;
+    margin:0.5rem 0;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+.score-container{
+    display:flex;
+}
+.score-container h3{
+    font-size: 1.5rem;
+    text-align: center;
+    margin:0.5rem 0.3rem;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    font-weight: 600;
+}
+hr{
+    width:80%;
+    margin: 0.5rem 0;
+    color:black;
+    font-weight: 600;
+}
+.btn-conatiner{
+    display: flex;
+    width:80%;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-active{
+    background:black;
+    color:white;
+}
+.box-conatiner{
+    position:relative;
+    width: 35rem;
+    height:16rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:0.5rem;
+    margin-top: 0.5rem;
+}
+.index{
+    position:absolute;
+    top:45%;
+    width: 50rem;
+    height:50rem;
+    background:transparent;
+}
+.index2{
+    position:absolute;
+    width: 10rem;
+    height:5rem;
+    background:transparent;
+}
+.box{
+    position: relative;
+    background: blue;
+    border:2px solid black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 2px 2px 3px rgba(255,255,255,0.4),
+    4px 4px 7px rgba(0,0,0,0.25) inset,
+    -1px -1px 3px rgba(255,255,255,0.3),
+    -3px -3px 3px rgba(255,255,255,0.4);
+    overflow: hidden;
+}
+.box::before{
+    content: '';
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg , rgba(0, 217, 255, 0.226),rgba(255,255,255,0.3));
+    position: absolute;
+    clip-path: polygon(86% 0, 100% 0, 100% 14%, 14% 100%, 0 100%, 0 86%);
+    transform:translate(-60% , -60%);
+    transition: all 0.9s;
+
+}
+.box::after{
+    content: '';
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg , rgba(0, 217, 255, 0.226),rgba(255,255,255,0.3));
+    position: absolute;
+    clip-path: polygon(86% 0, 100% 0, 100% 14%, 14% 100%, 0 100%, 0 86%);
+    transform:translate(-100% , -100%);
+    transition: all 2s;
+}
+.box:hover{
+    transform: scale(1.05);
+}
+.box:hover::before, .box:hover::after{
+    transform:translate(60% , 60%);
+}
+.restart{
+    width:7rem;
+    color:red;
+    border:2px solid red;
+    font-weight: 500;
+    transition:all 0.4s;
+
+}
+.restart-active{
+    animation: restart 1s infinite;
+}
+@keyframes restart {
+    0%, 100%{
+        background: #ffe4e4;
+        letter-spacing: 1px;
+    }
+    50%{
+        background: rgb(255, 135, 135);
+        letter-spacing: 2px;
+        color:rgb(0, 0, 0);
+    }
+}
+.level-active{
+    background:black;
+    color:yellow;
+}
+.level-deactive{
+    background:yellow;
+    color:black;
+}
+.colorCode{
+    letter-spacing: 2.5px;
+    color:rgb(46, 47, 124);
+}
+.game-conatiner h2{
+    color:maroon;
+    font-size: 2.2rem;
+}
